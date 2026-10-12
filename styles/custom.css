@@ -1,0 +1,224 @@
+/* ==========================================================================
+   NLP Playground — Interactive NLP Lab Stylesheet
+   Theme: Modern Dark with Blue / Violet Accents & Glassmorphism
+   ========================================================================== */
+
+/* Main Container & Font Styles */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
+
+html,
+body,
+[class*="css"] {
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+code,
+pre,
+.mono {
+    font-family: 'JetBrains Mono', monospace !important;
+}
+
+/* Background & Main App Wrapper */
+.stApp {
+    background-color: #0b0f19;
+    background-image:
+        radial-gradient(at 0% 0%, rgba(99, 102, 241, 0.12) 0px, transparent 50%),
+        radial-gradient(at 100% 100%, rgba(139, 92, 246, 0.08) 0px, transparent 50%),
+        radial-gradient(at 50% 50%, rgba(14, 165, 233, 0.04) 0px, transparent 50%);
+    color: #f1f5f9;
+}
+
+/* Sidebar Styling */
+section[data-testid="stSidebar"] {
+    background-color: #0d1222 !important;
+    border-right: 1px solid rgba(99, 102, 241, 0.15);
+}
+
+section[data-testid="stSidebar"] .stRadio>label {
+    display: none;
+}
+
+/* Custom Hero Banner */
+.hero-container {
+    background: linear-gradient(135deg, rgba(30, 27, 75, 0.6) 0%, rgba(15, 23, 42, 0.8) 100%);
+    border: 1px solid rgba(99, 102, 241, 0.25);
+    border-radius: 16px;
+    padding: 2.2rem 2.5rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 10px 30px -10px rgba(99, 102, 241, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-container::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -20%;
+    width: 320px;
+    height: 320px;
+    background: radial-gradient(circle, rgba(139, 92, 246, 0.25) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.hero-title {
+    font-size: 2.3rem;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    background: linear-gradient(135deg, #ffffff 30%, #a5b4fc 70%, #c084fc 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 0.5rem;
+}
+
+.hero-subtitle {
+    color: #94a3b8;
+    font-size: 1.05rem;
+    line-height: 1.6;
+    max-width: 800px;
+}
+
+/* Feature & Tool Cards */
+.tool-card {
+    background: rgba(19, 27, 46, 0.75);
+    border: 1px solid rgba(99, 102, 241, 0.2);
+    border-radius: 14px;
+    padding: 1.4rem 1.4rem;
+    height: 100%;
+    transition: all 0.25s ease-in-out;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.tool-card:hover {
+    transform: translateY(-3px);
+    border-color: rgba(139, 92, 246, 0.5);
+    box-shadow: 0 8px 25px rgba(99, 102, 241, 0.25);
+}
+
+.card-icon {
+    font-size: 1.8rem;
+    margin-bottom: 0.6rem;
+    display: inline-block;
+}
+
+.card-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #f8fafc;
+    margin-bottom: 0.35rem;
+}
+
+.card-desc {
+    color: #94a3b8;
+    font-size: 0.88rem;
+    line-height: 1.5;
+    margin-bottom: 0.8rem;
+}
+
+/* Metric Display Badges */
+.metric-box {
+    background: rgba(15, 23, 42, 0.85);
+    border: 1px solid rgba(99, 102, 241, 0.25);
+    border-radius: 12px;
+    padding: 1rem 1.2rem;
+    text-align: center;
+}
+
+.metric-value {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: #f1f5f9;
+}
+
+.metric-label {
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #94a3b8;
+    margin-top: 0.2rem;
+}
+
+/* Pipeline Step Cards */
+.pipeline-step {
+    background: rgba(15, 23, 42, 0.7);
+    border-left: 3px solid #6366f1;
+    border-radius: 0 10px 10px 0;
+    padding: 0.85rem 1.1rem;
+    margin-bottom: 0.75rem;
+}
+
+.pipeline-number {
+    display: inline-block;
+    background: #4f46e5;
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 0.75rem;
+    border-radius: 6px;
+    padding: 0.15rem 0.55rem;
+    margin-right: 0.5rem;
+}
+
+/* Tag Badges */
+.nlp-badge {
+    display: inline-block;
+    padding: 0.25rem 0.65rem;
+    border-radius: 9999px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    background: rgba(99, 102, 241, 0.18);
+    color: #c7d2fe;
+    border: 1px solid rgba(99, 102, 241, 0.3);
+    margin: 0.2rem;
+}
+
+.badge-spam {
+    background: rgba(239, 68, 68, 0.18);
+    color: #fca5a5;
+    border-color: rgba(239, 68, 68, 0.35);
+}
+
+.badge-ham {
+    background: rgba(16, 185, 129, 0.18);
+    color: #6ee7b7;
+    border-color: rgba(16, 185, 129, 0.35);
+}
+
+/* Custom Warning Banner */
+.custom-warning {
+    background: rgba(217, 119, 6, 0.12);
+    border: 1px solid rgba(245, 158, 11, 0.35);
+    border-radius: 10px;
+    padding: 0.8rem 1.1rem;
+    color: #fcd34d;
+    font-size: 0.88rem;
+    margin-bottom: 1.2rem;
+}
+
+/* Custom Result Card */
+.result-card {
+    background: rgba(17, 24, 39, 0.8);
+    border: 1px solid rgba(99, 102, 241, 0.25);
+    border-radius: 14px;
+    padding: 1.4rem;
+    margin-top: 1rem;
+}
+
+/* Code block adjustments */
+pre {
+    border-radius: 8px !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+/* Clean up Streamlit native buttons */
+div.stButton>button {
+    border-radius: 8px;
+    font-weight: 600;
+    transition: all 0.2s ease;
+    border: 1px solid rgba(99, 102, 241, 0.3);
+}
+
+div.stButton>button:hover {
+    border-color: #8b5cf6;
+    box-shadow: 0 0 12px rgba(139, 92, 246, 0.3);
+}
